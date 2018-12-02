@@ -1,0 +1,48 @@
+languageCode = "en-us"
+title = "AJonP"
+theme = ""
+description = "Purr-fect Solutions"
+metadataformat = "yaml"
+canonifyurls = true
+disqusShortname = "ajonp"
+enableGitInfo = "true"
+pygmentsUseClasses = "true"
+pygmentsCodeFences = "true"
+
+
+[author]
+  name = "ajonp"
+  homepage = "https://ajonp.com"
+
+
+[taxonomies]
+  authors = "authors"
+  tag = "tags"
+  category = "categories"
+  languages = "languages"
+  
+[params]
+  RSSLink = "/index.xml"
+  author = "ajonp" 
+  github = "ajonpllc" 
+  twitter = "ajonpcom" 
+  email = "developer@ajonp.com"
+  images = ["https://res.cloudinary.com/ajonp/image/upload/w_500/v1543267002/ajonp-ajonp-com/youtube_banner.png"]
+  fb_app_id = "1789405951311946"
+
+
+[[menu.main]]
+    name = "Home"
+    pre = "home"
+    weight = -1
+    url = "/"
+[[menu.main]]
+    name = "Lessons"
+    pre = "school"
+    weight = 100
+    url = "/lessons/"
+[[menu.main]]
+    name = "Blog"
+    pre = "book"
+    weight = 200
+    url = "/blog/"

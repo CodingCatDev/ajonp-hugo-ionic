@@ -1,0 +1,15 @@
+# theme.toml template for a Hugo theme
+# See https://github.com/gohugoio/hugoThemes#themetoml for an example
+
+name = "AJonP Hugo Ionic"
+license = "MIT"
+licenselink = "https://github.com/AJONPLLC/ajonp-hugo-ionic/blob/master/LICENSE"
+description = "Hugo Theme using Ionic Framework, with PWA"
+homepage = "https://ajonp.com"
+tags = ["ionic", "pwa", "responsive", "documentation", "clipbarod.js", "font awesome", 'landing-page']
+features = ["ionic", "pwa", "responsive", "documentation", "clipbarod.js", "font awesome"]
+min_version = "0.50"
+
+[author]
+  name = "Alex Patterson"
+  homepage = "https://ajonp.com"

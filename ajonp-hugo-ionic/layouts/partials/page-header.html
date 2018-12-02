@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-toggle>
+        <ion-button>
+          <ion-icon slot="icon-only" name="menu"></ion-icon>
+        </ion-button>
+      </ion-menu-toggle>
+    </ion-buttons>
+    <ion-row>
+    <ion-button href="/" color="light"
+      ><ion-icon
+        src="/images/ajonp_logo.svg"
+        size="large"
+        slot="icon-only"
+      ></ion-icon
+    ></ion-button>
+    <div id="search-box" style="width: 80%;margin: auto;" float-right><!-- SearchBox widget will appear here --></div>
+  </ion-toolbar>
+  {{ partial "search-hits" . }}
+</ion-header>
