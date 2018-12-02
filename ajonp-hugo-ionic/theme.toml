@@ -7,7 +7,7 @@ licenselink = "https://github.com/AJONPLLC/ajonp-hugo-ionic/blob/master/LICENSE"
 description = "Hugo Theme using Ionic Framework, with PWA"
 homepage = "https://ajonp.com"
 tags = ["ionic", "pwa", "responsive", "documentation", "clipbarod.js", "font awesome", 'landing-page']
-features = ["ionic", "pwa", "responsive", "documentation", "clipbarod.js", "font awesome"]
+features = ["ionic", "pwa", "responsive", "documentation", "clipbarod.js", "font awesome", "algolia"]
 min_version = "0.50"
 
 [author]
