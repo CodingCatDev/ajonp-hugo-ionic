@@ -1,0 +1,37 @@
+{{ define "header"}} {{ partial "header" .}} {{ end }} {{ define "main"}}
+{{/*  {{ template "_internal/schema.html" . }} */}}
+<ion-page class="ion-page" main>
+    {{ partial "page-header" . }}
+  <ion-content padding>
+    <ion-grid>
+      <ion-row>
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>{{.Title}}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            {{ if .Description }}
+            <p>{{ .Description }}</p>
+            {{ end }} <time class="post-time">{{ partial "post/meta" . }}</time>
+          </ion-card-content>
+          {{ with.Params.images }} {{ range first 1 . }}
+          <figure><img src="{{ . | absURL }}" alt="Hero Image" /></figure>
+          {{ end }} {{ end }}
+        </ion-card>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <div id="post" itemprop="articleBody">{{.Content | safeHTML}}</div>
+
+          <div class="">
+            {{ partial "post/byauthor" . }}
+            {{ partial "post/related-content" . }}
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row> </ion-row>
+    </ion-grid>
+  </ion-content>
+  {{ partial "footer" .}}
+</ion-page>
+{{ end }}

@@ -1,0 +1,38 @@
+{{ define "header"}} {{ partial "header" .}} {{ end }} {{ define "main"}}
+<ion-page class="ion-page" main>
+    {{ partial "page-header" . }}
+  <ion-content padding>
+    <ion-grid>
+      <ion-row justify-content-center>
+        <ion-card style="max-width:500px">
+          <ion-img
+            src="https://res.cloudinary.com/ajonp/image/upload/f_auto,w_1000/v1543267002/ajonp-ajonp-com/youtube_banner.png"
+          ></ion-img>
+          <ion-card-header>
+            <ion-card-title>Welcome to AJonP</ion-card-title>
+            <p>
+              Here you can find lessons and videos to help coach you on your
+              programming journey.
+            </p>
+          </ion-card-header>
+        </ion-card>
+      </ion-row>
+      <ion-row justify-content-center> <h2>Recent Lessons</h2> </ion-row>
+      <ion-row justify-content-center>
+        {{ range first 3 (where .Pages "Section" "lessons").ByDate }}
+        <ion-card style="max-width:400px">
+          <ion-item>
+            <ion-label>{{.Params.title}}</ion-label>
+            <ion-button fill="outline" slot="end" href="{{ .Permalink }}">View</ion-button>
+          </ion-item>
+          {{ with.Params.images }} {{ range first 1 . }}
+          <ion-img src="{{ . | absURL }}" alt="Hero Image"></ion-img>
+          {{ end }} {{ end }}
+        </ion-card>
+        {{ end }}
+      </ion-row>
+    </ion-grid>
+  </ion-content>
+  {{ partial "footer" .}}
+</ion-page>
+{{ end }}

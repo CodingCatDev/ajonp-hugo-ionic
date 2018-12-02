@@ -1,0 +1,28 @@
+{{ define "header"}} {{ partial "header" .}} {{ end }} {{ define "main"}}
+<ion-page class="ion-page" main>
+    {{ partial "page-header" . }}
+  <ion-content padding>
+    <ion-grid>
+      <ion-row justify-content-center>
+        {{ range.Data.Pages.ByWeight }}
+        <ion-card style="max-width:400px">
+          <ion-item>
+            <ion-label>{{.Title}}</ion-label>
+            <ion-button fill="outline" slot="end" href="{{ .Permalink }}"
+              >View</ion-button
+            >
+          </ion-item>
+          <ion-card-content>
+          <p>{{ .Params.description }}</p>
+        </ion-card-content>
+          {{ with.Params.images }} {{ range first 1 . }}
+          <ion-img src="{{ . | absURL }}" alt="Hero Image"></ion-img>
+          {{ end }} {{ end }}
+        </ion-card>
+        {{ end }}
+      </ion-row>
+    </ion-grid>
+  </ion-content>
+  {{ partial "footer" .}}
+</ion-page>
+{{ end }}

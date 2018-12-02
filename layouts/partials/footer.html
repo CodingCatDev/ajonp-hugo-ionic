@@ -1,0 +1,26 @@
+<ion-footer>
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          {{/*
+          <ion-button href="/lessons/" shape="round" size="small">
+            <ion-icon slot="start" name="book" size="small"></ion-icon>
+            Lessons
+          </ion-button>
+          */}}
+          <ion-button
+            href="https://twitter.com/{{.Site.Params.twitter}}"
+            shape="round"
+            size="small"
+          >
+            <ion-icon slot="icon-only" name="logo-twitter"></ion-icon>
+          </ion-button>
+        </ion-col>
+        <ion-col style="text-align:right;">
+          Copyright © 2018 Created by AJONP LLC
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,19 @@
+<ion-menu style="border:none;">
+  <ion-header>
+    <ion-toolbar color="primary"> <ion-title>Menu</ion-title> </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list>
+      <ion-list-header> Navigate </ion-list-header>
+      <ion-menu-toggle auto-hide="false">
+        {{ $currentPage := . }} {{ range.Site.Menus.main }}
+        <ion-item button href="{{ .URL }}">
+          <ion-icon slot="start" name="{{ .Pre }}" color="primary"></ion-icon>
+          <ion-label> {{ .Name }} </ion-label>
+        </ion-item>
+        {{ end }}
+      </ion-menu-toggle>
+    </ion-list>
+  </ion-content>
+</ion-menu>

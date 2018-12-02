@@ -1,0 +1,163 @@
+{{/*  Icons  */}}
+<link rel="apple-touch-icon" sizes="57x57" href="/icons/apple-icon-57x57.png" />
+<link rel="apple-touch-icon" sizes="60x60" href="/icons/apple-icon-60x60.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="/icons/apple-icon-72x72.png" />
+<link rel="apple-touch-icon" sizes="76x76" href="/icons/apple-icon-76x76.png" />
+<link
+  rel="apple-touch-icon"
+  sizes="114x114"
+  href="/icons/apple-icon-114x114.png"
+/>
+<link
+  rel="apple-touch-icon"
+  sizes="120x120"
+  href="/icons/apple-icon-120x120.png"
+/>
+<link
+  rel="apple-touch-icon"
+  sizes="144x144"
+  href="/icons/apple-icon-144x144.png"
+/>
+<link
+  rel="apple-touch-icon"
+  sizes="152x152"
+  href="/icons/apple-icon-152x152.png"
+/>
+<link
+  rel="apple-touch-icon"
+  sizes="180x180"
+  href="/icons/apple-icon-180x180.png"
+/>
+<link
+  rel="icon"
+  type="image/png"
+  sizes="192x192"
+  href="/icons/android-icon-192x192.png"
+/>
+<link
+  rel="icon"
+  type="image/png"
+  sizes="32x32"
+  href="/icons/favicon-32x32.png"
+/>
+<link
+  rel="icon"
+  type="image/png"
+  sizes="96x96"
+  href="/icons/favicon-96x96.png"
+/>
+<link
+  rel="icon"
+  type="image/png"
+  sizes="16x16"
+  href="/icons/favicon-16x16.png"
+/>
+<link rel="manifest" href="/manifest.json" />
+<meta name="msapplication-TileColor" content="#ffffff" />
+<meta name="msapplication-TileImage" content="/icons/ms-icon-144x144.png" />
+<meta name="theme-color" content="#ffffff" />
+
+{{/*  Ionic  */}}
+<link
+  href="https://unpkg.com/@ionic/core@4.0.0-beta.16/css/ionic.bundle.css"
+  rel="stylesheet"
+/>
+<script src="https://unpkg.com/@ionic/core@4.0.0-beta.16/dist/ionic.js"></script>
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css"
+/>
+{{/*  Cookie Consent  */}}
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+<script>
+  window.addEventListener("load", function() {
+    window.cookieconsent.initialise({
+      palette: {
+        popup: {
+          background: "#383b75"
+        },
+        button: {
+          background: "#f1d600"
+        }
+      }
+    });
+  });
+</script>
+{{/*  Font Awesome  */}}
+<script
+  defer
+  src="https://use.fontawesome.com/releases/v5.5.0/js/all.js"
+  integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0"
+  crossorigin="anonymous"
+></script>
+{{/*  clipboardjs  */}}
+<script src="https://unpkg.com/clipboard@2.0.0/dist/clipboard.min.js"></script>
+<script>
+  window.addEventListener("load", function() {
+    (function(document) {
+      var $codes = document.querySelectorAll(".highlight");
+
+      function addCopy(element) {
+        var copy = document.createElement("ion-button");
+        copy.setAttribute("shape", "round");
+        copy.setAttribute("size", "small");
+        copy.className = "copy";
+        copy.textContent = "copy";
+        
+        var outer = document.createElement("div");
+        outer.setAttribute("class","chroma");
+        outer.appendChild(copy);
+        element.prepend(outer);
+      }
+
+      for (var i = 0, len = $codes.length; i < len; i++) {
+        addCopy($codes[i]);
+      }
+
+      var clipboard = new ClipboardJS(".copy", {
+        target: function(trigger) {
+          return trigger.parentElement.parentElement.querySelector("code");
+        }
+      }).on('success', function(e) {
+        successMessage(e.trigger, 'Copied!');
+        e.clearSelection();
+      }).on('error', function(e) {
+        successMessage(e.trigger, fallbackMessage(e.action));
+      });
+    })(document);
+  });
+  function successMessage(elem, msg) {
+    var oldHTML = elem.innerHTML;
+    elem.setAttribute('fill', 'outline');
+    elem.innerHTML = msg;
+    setTimeout(function() {
+      elem.innerHTML = oldHTML;
+      elem.setAttribute('fill', 'solid');
+    }, 1000);
+  }
+  
+  function fallbackMessage(elem, action) {
+    var actionMsg = '';
+    var actionKey = (action === 'cut' ? 'X' : 'C');
+    if (isMac) {
+        actionMsg = 'Press ⌘-' + actionKey;
+    } else {
+        actionMsg = 'Press Ctrl-' + actionKey;
+    }
+    return actionMsg;
+  }
+</script>
+
+{{/*  Algolia Search  */}}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4/dist/instantsearch.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4"></script>
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4/dist/instantsearch-theme-algolia.min.css"
+/>
