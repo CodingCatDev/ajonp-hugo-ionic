@@ -7,16 +7,13 @@
         </ion-button>
       </ion-menu-toggle>
     </ion-buttons>
-    <ion-row>
-    <ion-button href="/" color="light"
-      ><ion-icon
-        src="/images/ajonp_logo.svg"
-        size="large"
-        slot="icon-only"
-        alt="logo"
-      ></ion-icon
-    ></ion-button>
-    <div id="search-box" style="width: 80%;margin: auto;" float-right><!-- SearchBox widget will appear here --></div>
+    <ion-buttons slot="start">
+      <ion-button href="/">
+        <ion-icon src="/images/ajonp_logo.svg" size="large" slot="icon-only">
+        </ion-icon>
+      </ion-button>
+    </ion-buttons>
+      <div id="search-box" style="width: 80%;margin: auto;"><!-- SearchBox widget will appear here --></div>
   </ion-toolbar>
   {{ partial "search-hits" . }}
 </ion-header>

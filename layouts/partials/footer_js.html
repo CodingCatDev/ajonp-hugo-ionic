@@ -14,14 +14,16 @@
         //routing: true,
         searchFunction(helper) {
           if (helper.state.query === '') {
+            document.getElementById("algolia-powered").hidden = true;
             document.getElementById("refinement-list").hidden = true;
             document.getElementById("hits").hidden = true;
           }else{
             var headOffset = document.getElementsByTagName("ion-page")[0].getElementsByTagName("ion-header")[0].offsetHeight;
             var pageOffset = document.getElementsByTagName("ion-page")[0].offsetWidth;
-            var r = document.getElementById("refinement-list");
-            r.hidden = false;
-            r.setAttribute("style", 
+
+            var p = document.getElementById("algolia-powered");
+            p.hidden = false;
+            p.setAttribute("style", 
             `
             position:absolute;
             top:${headOffset}px;
@@ -32,10 +34,23 @@
             padding: 5px;
             margin-left: 20px;`);
 
+            {{/*  var r = document.getElementById("refinement-list");
+            r.hidden = false;
+            r.setAttribute("style", 
+            `
+            position:absolute;
+            top:${p.offsetHeight + headOffset}px;
+            background: #fff;
+            box-shadow: 0 10px 20px rgba(0,0,0,.16);
+            width: ${pageOffset - 40}px;
+            z-index: 100;
+            padding: 5px;
+            margin-left: 20px;`);  */}}
+
             var h = document.getElementById("hits");
             h.setAttribute("style", 
             `position:absolute; 
-            top:${r.offsetHeight + headOffset}px;
+            top:${p.offsetHeight + headOffset}px;
             background: #fff;
             border-top-left-radius: 0px;
             border-top-right-radius: 0px;
