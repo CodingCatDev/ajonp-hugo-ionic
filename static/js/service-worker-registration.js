@@ -42,6 +42,7 @@ if ('serviceWorker' in navigator) {
                 // It's the perfect time to display a "New content is available; please refresh."
                 // message in the page's interface.
                 console.log('New or updated content is available.');
+                presentToastWithOptions();
               } else {
                 // At this point, everything has been precached.
                 // It's the perfect time to display a "Content is cached for offline use." message.
@@ -59,4 +60,18 @@ if ('serviceWorker' in navigator) {
       console.error('Error during service worker registration:', e);
     });
   });
+  
+  async function presentToastWithOptions() {
+    const toastController = document.querySelector('ion-toast-controller');
+    await toastController.componentOnReady();
+  
+    const toast = await toastController.create({
+      message: 'New Update',
+      showCloseButton: true,
+      position: 'bottom',
+      closeButtonText: 'Refresh'
+    });
+    toast.on('ionToastDidDismiss', () => { window.location('/')});
+    return await toast.present();
+  }
 }
