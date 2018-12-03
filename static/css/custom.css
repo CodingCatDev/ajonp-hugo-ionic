@@ -138,3 +138,12 @@ pre{
 video{
   width: 100%;
 }
+
+blockquote{
+  border-left-color: #3c2d4e;
+  background-color: #504260;
+  color: #ffffff;
+  border-left-style: solid;
+  border-left-width: 4px;
+  margin: 0px;
+}
