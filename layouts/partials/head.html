@@ -60,7 +60,8 @@
 {{/*  Ionic  */}}
 <link
   rel="preload"
-  onload="this.rel='stylesheet'"
+  as="style"
+  onload="this.rel = 'stylesheet'"
   href="https://unpkg.com/@ionic/core@4.0.0-beta.16/css/ionic.bundle.css"
 />
 <script
@@ -69,7 +70,8 @@
 ></script>
 <link
   rel="preload"
-  onload="this.rel='stylesheet'"
+  as="style"
+  onload="this.rel = 'stylesheet'"
   type="text/css"
   href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css"
 />
@@ -162,11 +164,11 @@
   }
 </script>
 
-{{/*  Algolia Search  */}}
-{{ if isset .Params "algolia" }}
+{{/*  Algolia Search  */}} {{ if isset .Params "algolia" }}
 <link
-rel="preload"
-onload="this.rel='stylesheet'"
+  rel="preload"
+  as="style"
+  onload="this.rel = 'stylesheet'"
   type="text/css"
   href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4/dist/instantsearch.min.css"
 />
@@ -175,14 +177,13 @@ onload="this.rel='stylesheet'"
   src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4"
 ></script>
 <link
-rel="preload"
-onload="this.rel='stylesheet'"
+  rel="preload"
+  as="style"
+  onload="this.rel = 'stylesheet'"
   type="text/css"
   href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4/dist/instantsearch-theme-algolia.min.css"
 />
-{{ end }}
-{{/*  Adsense  */}} 
-{{ if isset .Params "adsense" }}
+{{ end }} {{/*  Adsense  */}} {{ if isset .Params "adsense" }}
 <script
   async
   src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
