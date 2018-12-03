@@ -3,10 +3,11 @@
     {{ partial "page-header" . }}
   <ion-content padding>
     <ion-list>
-        <ion-list-header>{{.Title}}</ion-list-header>
+        <ion-list-header>Categories</ion-list-header>
         <ion-menu-toggle auto-hide="false">
             {{ range.Data.Pages.ByWeight }}
           <ion-item button href="{{ .Permalink }}">
+              <ion-icon slot="start" name="apps" color="primary"></ion-icon>
             <ion-label> {{.Title}} </ion-label>
           </ion-item>
           {{ end }}
