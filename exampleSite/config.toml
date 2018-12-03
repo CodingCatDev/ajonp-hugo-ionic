@@ -22,6 +22,7 @@ pygmentsCodeFences = "true"
   languages = "languages"
   
 [params]
+  toc = "true"
   RSSLink = "/index.xml"
   author = "ajonp" 
   github = "ajonpllc" 
@@ -52,3 +53,18 @@ pygmentsCodeFences = "true"
     pre = "book"
     weight = 200
     url = "/blog/"
+[[menu.main]]
+    name = "Categories"
+    pre = "apps"
+    weight = 300
+    url = "/categories/"
+[[menu.main]]
+    name = "Tags"
+    pre = "pricetag"
+    weight = 400
+    url = "/tags/"
+[[menu.main]]
+    name = "Coding Languages"
+    pre = "code"
+    weight = 500
+    url = "/languages/"
