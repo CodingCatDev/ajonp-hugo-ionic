@@ -4,7 +4,7 @@
   <ion-content padding>
     <ion-grid>
       <ion-row justify-content-center>
-        {{ range.Data.Pages.ByWeight }}
+        {{ range.Data.Pages.ByDate.Reverse }}
         <ion-card style="max-width:400px">
           <ion-item>
             <ion-label>{{.Title}}</ion-label>
