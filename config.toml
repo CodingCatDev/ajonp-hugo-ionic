@@ -1,6 +1,6 @@
 languageCode = "en-us"
 title = "AJonP"
-theme = ""
+theme = "ajonp-hugo-ionic"
 description = "Purr-fect Solutions"
 metadataformat = "yaml"
 canonifyurls = true
@@ -31,7 +31,7 @@ pygmentsCodeFences = "true"
   fb_app_id = "1789405951311946"
   adsense = "ca-pub-8603586563858288"
   # Search Only
-  [[algolia]]
+  [params.algolia]
     appId = "DKKVXPOQMA"
     apiKey = "0a9ae037390dffeef403ccb8f2f9acbe"
     indexName = "prod_ajonp"

@@ -154,7 +154,8 @@
   }
 </script>
 
-{{/*  Algolia Search  */}} {{ if isset .Params "algolia" }}
+{{/*  Algolia Search  */}} 
+{{ with .Site.Params.algolia }}
 <link
   rel="preload"
   as="style"
@@ -170,14 +171,16 @@
   type="text/css"
   href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4/dist/instantsearch-theme-algolia.min.css"
 />
-{{ end }} {{/*  Adsense  */}} {{ if isset .Params "adsense" }}
+{{ end }} 
+{{/*  Adsense  */}} 
+{{ with .Site.Params.adsense }}
 <script
   async
   src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
 ></script>
 <script>
   (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "{{ .Site.Params.adsense }}",
+    google_ad_client: "{{ . }}",
     enable_page_level_ads: true
   });
 </script>

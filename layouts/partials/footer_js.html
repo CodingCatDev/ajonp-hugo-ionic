@@ -4,12 +4,12 @@
   {{/*  {{end}}  */}}
 {{end}}
 {{/*  Algolia widgets  */}}
-{{ if isset .Params "algolia" }}
+{{ with .Site.Params.algolia }}
 <script>
     const search = instantsearch({
-      appId: "{{ .Site.Params.algolia.appId }}",
-      apiKey: "{{ .Site.Params.algolia.apiKey }}",
-      indexName: "{{ .Site.Params.algolia.indexName }}",
+      appId: "{{ .appid }}",
+      apiKey: "{{ .apikey }}",
+      indexName: "{{ .indexname }}",
       //routing: true,
       searchFunction(helper) {
         if (helper.state.query === '') {
