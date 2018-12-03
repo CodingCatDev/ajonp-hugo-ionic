@@ -65,9 +65,7 @@
 />
 <script src="https://unpkg.com/@ionic/core@4.0.0-beta.16/dist/ionic.js"></script>
 <link
-  rel="preload"
-  as="style"
-  onload="this.rel = 'stylesheet'"
+  rel="stylesheet"
   type="text/css"
   href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css"
 />
@@ -157,17 +155,12 @@
 {{/*  Algolia Search  */}} 
 {{ with .Site.Params.algolia }}
 <link
-  rel="preload"
-  as="style"
-  onload="this.rel = 'stylesheet'"
-  type="text/css"
+rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4/dist/instantsearch.min.css"
 />
 <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4" defer></script>
 <link
-  rel="preload"
-  as="style"
-  onload="this.rel = 'stylesheet'"
+  rel="stylesheet"
   type="text/css"
   href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4/dist/instantsearch-theme-algolia.min.css"
 />
@@ -185,4 +178,3 @@
   });
 </script>
 {{ end }}
-{{ partial "twitter-card" . }}
