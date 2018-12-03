@@ -147,3 +147,6 @@ blockquote{
   border-left-width: 4px;
   margin: 0px;
 }
+blockquote a {
+  color: white;
+}
