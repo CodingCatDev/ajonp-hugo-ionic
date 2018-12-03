@@ -15,7 +15,11 @@
         {{ end }}
       </ion-menu-toggle>
     </ion-list>
-    {{.Title}}
-    {{ partial "toc" .}}
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>{{.Title}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content> {{ partial "toc" .}} </ion-card-content>
+    </ion-card>
   </ion-content>
 </ion-menu>
