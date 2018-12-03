@@ -6,6 +6,25 @@
 ## Lesson for use
 [AJonP Hugo Ionic Theme](https://ajonp.com/lessons/4-hugo-ionic/)
 
+### Add ajonp-hugo-ionic
+Go to your sites main directory
+
+Victor/Hugo style
+```sh
+git submodule add https://github.com/AJONPLLC/ajonp-hugo-ionic site/themes/ajonp-hugo-ionic
+```
+
+Just Hugo
+```sh
+git submodule add https://github.com/AJONPLLC/ajonp-hugo-ionic themes/ajonp-hugo-ionic
+```
+If you would like to keep up to date with my updates just run 
+```sh
+git submodule update --recursive --remote
+```
+
+>Remember if you want to override a file do this in your own layouts/ folder.
+
 ## Tools
 
 - [Hugo](https://gohugo.io/)
@@ -13,6 +32,8 @@
 - [Font Awesome](https://fontawesome.com/)
 - [PWA](https://developers.google.com/web/progressive-web-apps/)
 - [Algolia](https://www.algolia.com/)
+- [Facebook App](https://developers.facebook.com/docs/sharing/webmasters/)
+- [Google AdSense](https://adsense.google.com)
 
 ## Orienations
 
