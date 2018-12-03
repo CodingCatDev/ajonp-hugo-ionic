@@ -30,6 +30,11 @@ pygmentsCodeFences = "true"
   images = ["https://res.cloudinary.com/ajonp/image/upload/w_500/v1543267002/ajonp-ajonp-com/youtube_banner.png"]
   fb_app_id = "1789405951311946"
   adsense = "ca-pub-8603586563858288"
+  # Search Only
+  [[algolia]]
+    appId = "DKKVXPOQMA"
+    apiKey = "0a9ae037390dffeef403ccb8f2f9acbe"
+    indexName = "prod_ajonp"
 
 
 [[menu.main]]

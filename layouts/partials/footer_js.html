@@ -4,11 +4,12 @@
   {{/*  {{end}}  */}}
 {{end}}
 {{/*  Algolia widgets  */}}
+{{ if isset .Params "algolia" }}
 <script>
     const search = instantsearch({
-      appId: "DKKVXPOQMA",
-      apiKey: "0a9ae037390dffeef403ccb8f2f9acbe",
-      indexName: "prod_ajonp",
+      appId: "{{ .Site.Params.algolia.appId }}",
+      apiKey: "{{ .Site.Params.algolia.apiKey }}",
+      indexName: "{{ .Site.Params.algolia.indexName }}",
       //routing: true,
       searchFunction(helper) {
         if (helper.state.query === '') {
@@ -78,4 +79,4 @@
     );
     search.start();
   </script>
-  
+  {{end}}
