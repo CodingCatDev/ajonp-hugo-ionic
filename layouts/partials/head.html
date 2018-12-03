@@ -163,6 +163,7 @@
 </script>
 
 {{/*  Algolia Search  */}}
+{{ if isset .Params "algolia" }}
 <link
 rel="preload"
 onload="this.rel='stylesheet'"
@@ -179,14 +180,16 @@ onload="this.rel='stylesheet'"
   type="text/css"
   href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4/dist/instantsearch-theme-algolia.min.css"
 />
-{{/*  Adsense  */}} {{ if isset .Params "adsense" }}
+{{ end }}
+{{/*  Adsense  */}} 
+{{ if isset .Params "adsense" }}
 <script
   async
   src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
 ></script>
 <script>
   (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "{{ .Site.Params.fb_app_id }}",
+    google_ad_client: "{{ .Site.Params.adsense }}",
     enable_page_level_ads: true
   });
 </script>

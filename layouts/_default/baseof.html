@@ -63,12 +63,8 @@
     }}
 
     {{ partial "head" . }}
-    <link href="{{
-      "/css/custom.css" | absURL
-    }}" rel="preload" onload="this.rel='stylesheet'" type="text/css"> <link
-    href="{{
-      "/css/syntax.css" | absURL
-    }}" rel="preload" onload="this.rel='stylesheet'"type="text/css">
+    <link href="{{ "/css/custom.css" | absURL }}" rel="preload" onload="this.rel='stylesheet'" type="text/css"> <link
+    href="{{ "/css/syntax.css" | absURL }}" rel="preload" onload="this.rel='stylesheet'"type="text/css">
   </head>
 
   <body>
