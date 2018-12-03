@@ -59,17 +59,25 @@
 
 {{/*  Ionic  */}}
 <link
+  rel="preload"
+  onload="this.rel='stylesheet'"
   href="https://unpkg.com/@ionic/core@4.0.0-beta.16/css/ionic.bundle.css"
-  rel="stylesheet"
 />
-<script src="https://unpkg.com/@ionic/core@4.0.0-beta.16/dist/ionic.js"></script>
+<script
+  defer
+  src="https://unpkg.com/@ionic/core@4.0.0-beta.16/dist/ionic.js"
+></script>
 <link
-  rel="stylesheet"
+  rel="preload"
+  onload="this.rel='stylesheet'"
   type="text/css"
   href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.css"
 />
 {{/*  Cookie Consent  */}}
-<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"></script>
+<script
+  defer
+  src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"
+></script>
 <script>
   window.addEventListener("load", function() {
     window.cookieconsent.initialise({
@@ -92,7 +100,10 @@
   crossorigin="anonymous"
 ></script>
 {{/*  clipboardjs  */}}
-<script src="https://unpkg.com/clipboard@2.0.0/dist/clipboard.min.js"></script>
+<script
+  defer
+  src="https://unpkg.com/clipboard@2.0.0/dist/clipboard.min.js"
+></script>
 <script>
   window.addEventListener("load", function() {
     (function(document) {
@@ -104,9 +115,9 @@
         copy.setAttribute("size", "small");
         copy.className = "copy";
         copy.textContent = "copy";
-        
+
         var outer = document.createElement("div");
-        outer.setAttribute("class","chroma");
+        outer.setAttribute("class", "chroma");
         outer.appendChild(copy);
         element.prepend(outer);
       }
@@ -119,31 +130,33 @@
         target: function(trigger) {
           return trigger.parentElement.parentElement.querySelector("code");
         }
-      }).on('success', function(e) {
-        successMessage(e.trigger, 'Copied!');
-        e.clearSelection();
-      }).on('error', function(e) {
-        successMessage(e.trigger, fallbackMessage(e.action));
-      });
+      })
+        .on("success", function(e) {
+          successMessage(e.trigger, "Copied!");
+          e.clearSelection();
+        })
+        .on("error", function(e) {
+          successMessage(e.trigger, fallbackMessage(e.action));
+        });
     })(document);
   });
   function successMessage(elem, msg) {
     var oldHTML = elem.innerHTML;
-    elem.setAttribute('fill', 'outline');
+    elem.setAttribute("fill", "outline");
     elem.innerHTML = msg;
     setTimeout(function() {
       elem.innerHTML = oldHTML;
-      elem.setAttribute('fill', 'solid');
+      elem.setAttribute("fill", "solid");
     }, 1000);
   }
-  
+
   function fallbackMessage(elem, action) {
-    var actionMsg = '';
-    var actionKey = (action === 'cut' ? 'X' : 'C');
+    var actionMsg = "";
+    var actionKey = action === "cut" ? "X" : "C";
     if (isMac) {
-        actionMsg = 'Press ⌘-' + actionKey;
+      actionMsg = "Press ⌘-" + actionKey;
     } else {
-        actionMsg = 'Press Ctrl-' + actionKey;
+      actionMsg = "Press Ctrl-" + actionKey;
     }
     return actionMsg;
   }
@@ -151,19 +164,26 @@
 
 {{/*  Algolia Search  */}}
 <link
-  rel="stylesheet"
+rel="preload"
+onload="this.rel='stylesheet'"
   type="text/css"
   href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4/dist/instantsearch.min.css"
 />
-<script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4"></script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4"
+></script>
 <link
-  rel="stylesheet"
+rel="preload"
+onload="this.rel='stylesheet'"
   type="text/css"
   href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.10.4/dist/instantsearch-theme-algolia.min.css"
 />
-{{/*  Adsense  */}}
-{{ if isset .Params "adsense" }}
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+{{/*  Adsense  */}} {{ if isset .Params "adsense" }}
+<script
+  async
+  src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+></script>
 <script>
   (adsbygoogle = window.adsbygoogle || []).push({
     google_ad_client: "{{ .Site.Params.fb_app_id }}",
