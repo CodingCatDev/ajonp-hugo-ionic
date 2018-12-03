@@ -9,22 +9,16 @@
       {{ block "title" . }}{{ .Title }} | {{ .Site.Title }}{{ end }}
     </title>
 
-    {{
-      with.Description
-    }}
+    {{ with.Description }}
     <meta name="description" content="{{ . }}" />
-    {{
-      end
-    }}
+    {{ end }}
     <!-- noindex meta -->
     {{ $default_noindex_kinds := slice "section" "taxonomy" "taxonomyTerm" }}
     {{ $noindex_kinds := .Site.Params.noindex_kinds | default $default_noindex_kinds }}
     {{ $is_noindex_true := and (isset .Params "noindex") .Params.noindex }}
     {{ if or (in $noindex_kinds .Kind) ($is_noindex_true) }}
     <meta name="robots" content="noindex" />
-    {{
-      end
-    }}
+    {{ end }}
 
     {{ partial "meta/name-author" . }}
     {{ template "_internal/opengraph.html" . }}
@@ -34,9 +28,7 @@
     <!-- Site verification -->
     {{ if .IsHome }}
     {{ partial "site-verification" . }}
-    {{
-      end
-    }}
+    {{ end }}
     <!-- add googleAnalytics in config.toml -->
     {{ template "_internal/google_analytics_async.html" . }}
     {{ if .RSSLink }}
@@ -46,25 +38,19 @@
       type="application/rss+xml"
       title="{{ .Site.Title }}"
     />
-    {{
-      end
-    }}
+    {{ end }}
 
     <link rel="canonical" href="{{ .Permalink }}" />
     {{ if (isset .Params "prev") }}
     <link rel="prev" href="{{ .Params.prev }}" />
-    {{
-      end
-    }}
+    {{ end }}
     {{ if (isset .Params "next") }}
     <link rel="next" href="{{ .Params.next }}" />
-    {{
-      end
-    }}
+    {{ end }}
 
     {{ partial "head" . }}
-    <link href="{{ "/css/custom.css" | absURL }}" rel="preload" onload="this.rel='stylesheet'" type="text/css"> <link
-    href="{{ "/css/syntax.css" | absURL }}" rel="preload" onload="this.rel='stylesheet'"type="text/css">
+    <link href="{{ "/css/custom.css" | absURL }}" rel="preload" onload="this.rel='stylesheet'" type="text/css"> 
+    <link href="{{ "/css/syntax.css" | absURL }}" rel="preload" onload="this.rel='stylesheet'"type="text/css">
   </head>
 
   <body>
