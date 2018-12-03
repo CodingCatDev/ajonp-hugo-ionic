@@ -30,7 +30,7 @@
         </ion-col>
       </ion-row>
       <ion-row>
-        <ion-col> {{.Content | safeHTML}} </ion-col>
+        <ion-col> {{ partial "scripts/headline-link.html" .Content | safeHTML }} </ion-col>
       </ion-row>
       <ion-row>
         <ion-card color="light">

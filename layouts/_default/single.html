@@ -21,7 +21,7 @@
       </ion-row>
       <ion-row>
         <ion-col>
-          <div id="post" itemprop="articleBody">{{.Content | safeHTML}}</div>
+          <div id="post" itemprop="articleBody">{{ partial "scripts/headline-link.html" .Content | safeHTML }}</div>
 
           <div class="">
             {{ partial "post/byauthor" . }}
