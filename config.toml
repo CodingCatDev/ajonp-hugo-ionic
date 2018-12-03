@@ -29,6 +29,7 @@ pygmentsCodeFences = "true"
   email = "developer@ajonp.com"
   images = ["https://res.cloudinary.com/ajonp/image/upload/w_500/v1543267002/ajonp-ajonp-com/youtube_banner.png"]
   fb_app_id = "1789405951311946"
+  adsense = "ca-pub-8603586563858288"
 
 
 [[menu.main]]
