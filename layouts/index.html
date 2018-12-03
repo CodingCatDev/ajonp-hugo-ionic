@@ -20,7 +20,7 @@
       </ion-row>
       <ion-row justify-content-center> <h2>Recent Lessons</h2> </ion-row>
       <ion-row justify-content-center>
-        {{ range first 3 (where .Pages "Section" "lessons").ByDate }}
+        {{ range first 4 (where .Pages "Section" "lessons").ByDate.Reverse }}
         <ion-card style="max-width:400px">
           <ion-item>
             <ion-label>{{.Params.title}}</ion-label>
