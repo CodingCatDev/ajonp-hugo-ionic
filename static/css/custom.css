@@ -65,7 +65,7 @@
 
 .error-container {
   height: 100%;
-  background-color: #3c2d4e;
+  background-color: var(--ion-color-primary);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -125,8 +125,8 @@ pre{
 }
 
 #hits em{
-  background-color: #3c2d4e;
-  color:white;
+  background-color: var(--ion-color-primary);
+  color: var(--ion-color-primary-contrast);
   font-weight: 700;
   font-style: normal;
 }
@@ -140,13 +140,13 @@ video{
 }
 
 blockquote{
-  border-left-color: #3c2d4e;
-  background-color: #504260;
-  color: #ffffff;
+  border-left-color: var(--ion-color-primary);
+  background-color: var(--ion-color-primary-tint);
+  color: var(--ion-color-primary-contrast);
   border-left-style: solid;
   border-left-width: 4px;
   margin: 0px;
 }
 blockquote a {
-  color: white;
+  color: var(--ion-color-primary-contrast);
 }
