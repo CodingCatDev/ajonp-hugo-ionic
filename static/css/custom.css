@@ -162,7 +162,9 @@ blockquote{
   color: var(--ion-color-primary-contrast);
   border-left-style: solid;
   border-left-width: 4px;
-  margin: 0px;
+  margin: .1em auto;
+  padding: .5em;
+  border-radius: .2em;
 }
 blockquote a {
   color: var(--ion-color-primary-contrast);

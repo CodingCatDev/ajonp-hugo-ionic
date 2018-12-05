@@ -98,7 +98,7 @@
 <script>
   window.addEventListener("load", function() {
     (function(document) {
-      var $codes = document.querySelectorAll(".highlight");
+      var $highlight = document.querySelectorAll(".highlight");
 
       function addCopy(element) {
         var copy = document.createElement("ion-button");
@@ -109,12 +109,15 @@
 
         var outer = document.createElement("div");
         outer.setAttribute("class", "chroma");
+        outer.setAttribute("style","background:none")
         outer.appendChild(copy);
         element.prepend(outer);
       }
 
-      for (var i = 0, len = $codes.length; i < len; i++) {
-        addCopy($codes[i]);
+      for (var i = 0, len = $highlight.length; i < len; i++) {
+        var highlight = $highlight[i];
+        addCopy(highlight);
+        highlight.querySelector("pre").setAttribute("style","margin: .1em auto;padding: .5em;border-radius: .2em;");
       }
 
       var clipboard = new ClipboardJS(".copy", {
