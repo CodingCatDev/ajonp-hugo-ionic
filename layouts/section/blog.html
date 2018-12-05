@@ -5,20 +5,21 @@
     <ion-grid>
       <ion-row justify-content-center>
         {{ range.Data.Pages.ByDate.Reverse }}
+        <a href="{{ .Permalink }}" style="text-decoration: none;">
         <ion-card style="max-width:400px">
           <ion-item>
             <ion-label>{{.Title}}</ion-label>
-            <ion-button fill="outline" slot="end" href="{{ .Permalink }}"
-              >View</ion-button
-            >
           </ion-item>
           <ion-card-content>
           <p>{{ .Params.description }}</p>
         </ion-card-content>
-          {{ with.Params.images }} {{ range first 1 . }}
-          <ion-img src="{{ . | absURL }}" alt="Hero Image"></ion-img>
-          {{ end }} {{ end }}
+          {{ if isset .Params "images" }} 
+              {{ range (.Params.images) first 1 . }}
+                <ion-img src="{{ . | absURL }}" alt="Hero Image"></ion-img>
+              {{ end }}
+          {{ end }} 
         </ion-card>
+        </a>
         {{ end }}
       </ion-row>
     </ion-grid>
