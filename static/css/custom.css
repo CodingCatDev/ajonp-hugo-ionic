@@ -61,6 +61,23 @@
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+
+  --ajonp-color-twitter: #1DA1F1;
+  --ajonp-color-github: #23292D;
+  --ajonp-color-youtube: #FF0000;
+}
+
+.ajonp-twitter{
+  --background: var(--ajonp-color-twitter);
+  --color: white;
+}
+.ajonp-github{
+  --background: var(--ajonp-color-github);
+  --color: white;
+}
+.ajonp-youtube{
+  --background: var(--ajonp-color-youtube);
+  --color: white;
 }
 
 .error-container {

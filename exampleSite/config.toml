@@ -27,6 +27,7 @@ pygmentsCodeFences = "true"
   author = "ajonp" 
   github = "ajonpllc" 
   twitter = "ajonpcom" 
+  youtube = "UCnKZ8gEb78zXKMi1ns-IQ2g" #channelname
   email = "developer@ajonp.com"
   images = ["https://res.cloudinary.com/ajonp/image/upload/w_500/v1543267002/ajonp-ajonp-com/youtube_banner.png"]
   fb_app_id = "1789405951311946"
@@ -36,7 +37,13 @@ pygmentsCodeFences = "true"
     appId = "DKKVXPOQMA"
     apiKey = "0a9ae037390dffeef403ccb8f2f9acbe"
     indexName = "prod_ajonp"
-
+  [params.home]
+    image = "https://res.cloudinary.com/ajonp/image/upload/v1544021089/ajonp-ajonp-com/Logos/ajonp/welcom_card.png"
+    title = "Welcome to AJonP"
+    subtitle = "Here you will find lessons and videos to coach you on your programming journey."
+    showGithub = true
+    showTwitter = true
+    showYoutube = true
 
 [[menu.main]]
     name = "Home"

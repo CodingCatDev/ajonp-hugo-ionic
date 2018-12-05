@@ -1,0 +1,30 @@
+{{ with $.Site.Params.home }}
+    {{ if or (isset . "showgithub") (isset . "showtwitter") (isset . "showyoutube") }}
+    <ion-row justify-content-center>
+    {{ if and (isset . "showgithub") (isset $.Site.Params "github") }}
+    <ion-col>
+        <ion-button class="ajonp-github" fill="block" href="https://github.com/{{ $.Site.Params.github }}">
+            <ion-icon name="logo-github" slot="start"></ion-icon>
+            GitHub
+        </ion-button>
+    </ion-col>
+    {{ end }}
+    {{ if and (isset . "showtwitter") (isset $.Site.Params "twitter") }}
+    <ion-col>
+        <ion-button class="ajonp-twitter" fill="block" href="https://twitter.com/{{ $.Site.Params.twitter }}">
+            <ion-icon name="logo-twitter" slot="start"></ion-icon>
+            Twitter
+        </ion-button>
+    </ion-col>
+    {{ end }}
+    {{ if and (isset . "showyoutube") (isset $.Site.Params "youtube") }}
+    <ion-col>
+        <ion-button class="ajonp-youtube" fill="block" href="https://www.youtube.com/channel/{{ $.Site.Params.youtube | absURL }}">
+            <ion-icon name="logo-youtube" slot="start"></ion-icon>
+            YouTube
+        </ion-button>
+    </ion-col>
+    {{ end }}
+    </ion-row>
+    {{ end }}
+{{ end }}

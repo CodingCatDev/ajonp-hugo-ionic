@@ -3,20 +3,19 @@
     {{ partial "page-header" . }}
   <ion-content padding>
     <ion-grid>
+      {{ if isset $.Site.Params "home" }}
       <ion-row justify-content-center>
         <ion-card style="max-width:500px">
-          <ion-img
-            src="https://res.cloudinary.com/ajonp/image/upload/f_auto,w_1000/v1543267002/ajonp-ajonp-com/youtube_banner.png"
-            alt="banner"
-          ></ion-img>
           <ion-card-header>
-            <ion-card-title>Welcome to AJonP</ion-card-title>
-            <p>
-              Here you can find lessons and videos to help coach you on your
-              programming journey.
-            </p>
+            {{ with  $.Site.Params.home.title }}<ion-card-title>{{ . }}</ion-card-title>{{ end }}
+            {{ with $.Site.Params.home.subtitle }}<ion-card-subtitle>{{ . }}</ion-card-subtitle>{{ end }}
           </ion-card-header>
+          {{with $.Site.Params.home.image }}
+          <ion-img src="{{ . }}" alt="Home Banner"></ion-img>
+          {{ end }}
+          {{ partial "site-social-card-buttons" . }}
         </ion-card>
+      {{ end }}
       </ion-row>
       <ion-row justify-content-center> <h2>Recent Lessons</h2> </ion-row>
       <ion-row justify-content-center>

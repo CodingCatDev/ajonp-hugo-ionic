@@ -31,11 +31,16 @@
             <ion-card-content>
               <time class="post-time">{{ partial "post/meta" . }}</time>
             </ion-card-content>
+            {{ partial "site-social-card-buttons" . }}
             {{ with .Params.githublinks }} {{ range .}}
-            <ion-button color="medium" href="{{.}}">
-                <ion-icon name="logo-github" slot="start"></ion-icon>
-                Get Source
-            </ion-button>
+            <ion-row>
+              <ion-col>
+                  <ion-button class="ajonp-github" href="{{.}}" fill="block">
+                      <ion-icon name="logo-github" slot="start"></ion-icon>
+                      {{ index . }}
+                  </ion-button>
+              </ion-col>
+            </ion-row>
             {{ end }}{{ end }}
           </ion-card>
         </ion-col>
