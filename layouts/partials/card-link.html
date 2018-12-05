@@ -1,0 +1,13 @@
+<a href="{{ .Permalink }}" style="text-decoration: none;">
+  <ion-card style="max-width:400px">
+    <ion-item>
+      <ion-label>{{.Title}}</ion-label>
+    </ion-item>
+    <ion-card-content>
+      <p>{{ .Params.description }}</p>
+    </ion-card-content>
+    {{ if isset .Params "images" }} {{ range (.Params.images) first 1 . }}
+    <ion-img src="{{ . | absURL }}" alt="Hero Image"></ion-img>
+    {{ end }} {{ end }}
+  </ion-card>
+</a>

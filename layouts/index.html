@@ -20,15 +20,7 @@
       <ion-row justify-content-center> <h2>Recent Lessons</h2> </ion-row>
       <ion-row justify-content-center>
         {{ range first 4 (where .Pages "Section" "lessons").ByDate.Reverse }}
-        <ion-card style="max-width:400px">
-          <ion-item>
-            <ion-label>{{.Params.title}}</ion-label>
-            <ion-button fill="outline" slot="end" href="{{ .Permalink }}">View</ion-button>
-          </ion-item>
-          {{ with.Params.images }} {{ range first 1 . }}
-          <ion-img src="{{ . | absURL }}" alt="Hero Image"></ion-img>
-          {{ end }} {{ end }}
-        </ion-card>
+        {{partial "card-link" . }}
         {{ end }}
       </ion-row>
     </ion-grid>
