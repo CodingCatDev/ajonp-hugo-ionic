@@ -14,9 +14,20 @@
               {{ if .Description }}
               <p>{{ .Description }}</p>
             </ion-card-content>
-            {{ with.Params.images }} {{ range first 1 . }}
-            <img src="{{ . | absURL }}" alt="Hero Image" />
-            {{ end }} {{ end }} {{ end }}
+            {{ if not (isset .Params.twitter "player") }}
+              {{ with.Params.images }} {{ range first 1 . }}
+              <img src="{{ . | absURL }}" alt="Hero Image" />
+              {{ end }} {{ end }} {{ end }}
+            {{end}}
+            {{ with .Params.twitter}}
+            {{ if ne .card "app" -}}
+              {{ if (isset .Params.twitter "player") }}
+                <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+                  <iframe src="{{ .player }}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen="" title="YouTube Video"></iframe>
+                </div>
+                {{end}}
+              {{ end }}
+            {{ end }}
             <ion-card-content>
               <time class="post-time">{{ partial "post/meta" . }}</time>
             </ion-card-content>
