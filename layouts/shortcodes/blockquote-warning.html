@@ -1,0 +1,23 @@
+<style>
+  .blockquote-warning blockquote {
+    border-left-color: var(--ion-color-warning);
+    background-color: var(--ion-color-warning-tint);
+    color: var(--ion-color-warning-contrast);
+    border-left-style: solid;
+    border-left-width: 4px;
+    margin: 0.1em auto;
+    padding: 0.5em;
+    border-radius: 0.2em;
+  }
+  .blockquote-warning blockquote a {
+    color: var(--ion-color-warning-contrast);
+  }
+  .blockquote-warning p {
+    margin: 0px;
+    padding: 1em;
+    color: var(--ion-color-warning-contrast);
+  }
+</style>
+<span class="blockquote-warning">
+  <p float-left><i class="fas fa-exclamation-circle"></i>{{ .Inner }}</p>
+</span>

@@ -1,0 +1,23 @@
+<style>
+  .blockquote-danger blockquote {
+    border-left-color: var(--ion-color-danger);
+    background-color: var(--ion-color-danger-tint);
+    color: var(--ion-color-danger-contrast);
+    border-left-style: solid;
+    border-left-width: 4px;
+    margin: 0.1em auto;
+    padding: 0.5em;
+    border-radius: 0.2em;
+  }
+  .blockquote-danger blockquote a {
+    color: var(--ion-color-danger-contrast);
+  }
+  .blockquote-danger p {
+    margin: 0px;
+    padding: 1em;
+    color: var(--ion-color-danger-contrast);
+  }
+</style>
+<span class="blockquote-danger">
+  <p float-left><i class="fas fa-exclamation-triangle"></i>{{ .Inner }}</p>
+</span>
