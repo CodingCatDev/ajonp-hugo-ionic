@@ -13,5 +13,5 @@ categories = []
 languages = []
 authors = ["Alex Patterson"]
 images = ["https://res.cloudinary.com/ajonp/image/upload/f_auto/"]
-video = ['https://www.youtube.com/watch?v=NlXVWtgLNjY']
+videos = ['https://www.youtube.com/v/NlXVWtgLNjY']
 +++
