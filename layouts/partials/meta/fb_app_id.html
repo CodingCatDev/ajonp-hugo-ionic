@@ -1,6 +1,6 @@
 
 {{ if isset .Params "fb_app_id" }}
-<meta name="fb:app_id" content="{{ index .Params "fb_app_id" }}">
+<meta property="fb:app_id" content="{{ index .Params "fb_app_id" }}">
 {{ else }}
-<meta name="fb:app_id" content="{{ .Site.Params.fb_app_id }}">
+<meta property="fb:app_id" content="{{ .Site.Params.fb_app_id }}">
 {{ end }}
