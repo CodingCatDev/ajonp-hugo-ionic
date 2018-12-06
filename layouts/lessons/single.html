@@ -31,7 +31,6 @@
             <ion-card-content>
               <time class="post-time">{{ partial "post/meta" . }}</time>
             </ion-card-content>
-            {{ partial "site-social-card-buttons" . }}
             {{ with .Params.githublinks }} {{ range .}}
             <ion-row>
               <ion-col>

@@ -1,6 +1,9 @@
 {{ with $.Site.Params.home }}
     {{ if or (isset . "showgithub") (isset . "showtwitter") (isset . "showyoutube") }}
     <ion-row justify-content-center>
+        <h1>Visit AJ round the web!</h1>
+    </ion-row>
+    <ion-row justify-content-center>
     {{ if and (isset . "showgithub") (isset $.Site.Params "github") }}
     <ion-col>
         <ion-button class="ajonp-github" fill="block" href="https://github.com/{{ $.Site.Params.github }}">
