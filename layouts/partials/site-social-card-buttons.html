@@ -7,7 +7,7 @@
             {{ if and (isset . "showgithub") (isset $.Site.Params "github") }}
             <ion-col>
                 <ion-button class="ajonp-github" expand="block" href="https://github.com/{{ $.Site.Params.github }}">
-                    <ion-icon name="logo-github" slot="start"></ion-icon>
+                    <i class="fab fa-github" data-fa-transform="left-6"></i>
                     GitHub
                 </ion-button>
             </ion-col>
@@ -15,7 +15,7 @@
             {{ if and (isset . "showtwitter") (isset $.Site.Params "twitter") }}
             <ion-col>
                 <ion-button class="ajonp-twitter" expand="block" href="https://twitter.com/{{ $.Site.Params.twitter }}">
-                    <ion-icon name="logo-twitter" slot="start"></ion-icon>
+                    <i class="fab fa-twitter" data-fa-transform="left-6"></i>
                     Twitter
                 </ion-button>
             </ion-col>
@@ -23,7 +23,7 @@
             {{ if and (isset . "showyoutube") (isset $.Site.Params "youtube") }}
             <ion-col size="12" size-sm>
                 <ion-button class="ajonp-youtube" expand="block" href="https://www.youtube.com/channel/{{ $.Site.Params.youtube | absURL }}">
-                    <ion-icon name="logo-youtube" slot="start"></ion-icon>
+                    <i class="fab fa-youtube" data-fa-transform="left-6"></i>
                     YouTube
                 </ion-button>
             </ion-col>
