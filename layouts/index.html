@@ -17,16 +17,16 @@
         </ion-card>
       {{ end }}
       </ion-row>
+      <ion-row>
+        <ion-col>
+          {{ .Content }}
+        </ion-col>
+      </ion-row>
       <ion-row justify-content-center> <h2>Recent Lessons</h2> </ion-row>
       <ion-row justify-content-center>
         {{ range first 4 (where .Pages "Section" "lessons").ByDate.Reverse }}
         {{partial "card-link" . }}
         {{ end }}
-      </ion-row>
-      <ion-row>
-        <ion-col>
-          {{ .Content }}
-        </ion-col>
       </ion-row>
     </ion-grid>
   </ion-content>
