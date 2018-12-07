@@ -1,30 +1,41 @@
 {{ with $.Site.Params.home }}
     {{ if or (isset . "showgithub") (isset . "showtwitter") (isset . "showyoutube") }}
+        {{ if (isset $.Site.Params.home "socialtitle") }}
         <ion-row justify-content-center>
-            <h1>Visit AJ round the web!</h1>
+            <h1>{{ $.Site.Params.home.socialtitle }}</h1>
         </ion-row>
+        {{ end }}
         <ion-row justify-content-center>
             {{ if and (isset . "showgithub") (isset $.Site.Params "github") }}
             <ion-col>
                 <ion-button class="ajonp-github" expand="block" href="https://github.com/{{ $.Site.Params.github }}">
-                    <i class="fab fa-github" data-fa-transform="left-6"></i>
-                    GitHub
+                    <i class="fab fa-github" data-fa-transform="left-6"></i>GitHub
                 </ion-button>
             </ion-col>
             {{ end }}
             {{ if and (isset . "showtwitter") (isset $.Site.Params "twitter") }}
             <ion-col>
                 <ion-button class="ajonp-twitter" expand="block" href="https://twitter.com/{{ $.Site.Params.twitter }}">
-                    <i class="fab fa-twitter" data-fa-transform="left-6"></i>
-                    Twitter
+                    <i class="fab fa-twitter" data-fa-transform="left-6"></i>Twitter
                 </ion-button>
             </ion-col>
             {{ end }}
+            {{ if and (isset . "showslack") (isset $.Site.Params "slack") }}
+            {{/*  <ion-col>
+                <ion-button class="ajonp-slack" href="https://{{ $.Site.Params.slack }}.slack.com">
+                    <i class="fab fa-slack" data-fa-transform="left-6"></i>Slack
+                </ion-button>
+            </ion-col>  */}}
+            <ion-col>
+                    <ion-button class="ajonp-slack" expand="block" href="https://{{ $.Site.Params.slack }}.slack.com">
+                        <i class="fab fa-slack" data-fa-transform="left-6"></i>Slack
+                    </ion-button>
+                </ion-col>
+            {{ end }}
             {{ if and (isset . "showyoutube") (isset $.Site.Params "youtube") }}
-            <ion-col size="12" size-sm>
+            <ion-col>
                 <ion-button class="ajonp-youtube" expand="block" href="https://www.youtube.com/channel/{{ $.Site.Params.youtube | absURL }}">
-                    <i class="fab fa-youtube" data-fa-transform="left-6"></i>
-                    YouTube
+                    <i class="fab fa-youtube" data-fa-transform="left-6"></i>YouTube
                 </ion-button>
             </ion-col>
             {{ end }}
