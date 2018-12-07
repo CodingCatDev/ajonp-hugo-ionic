@@ -19,6 +19,9 @@
       <ion-card-header>
         <ion-card-title>{{.Title}}</ion-card-title>
       </ion-card-header>
+      {{ if .IsHome }}
+      {{ partial "site-social-card-buttons" . }}
+      {{ end }}
       <ion-card-content> {{ partial "toc" .}} </ion-card-content>
     </ion-card>
   </ion-content>

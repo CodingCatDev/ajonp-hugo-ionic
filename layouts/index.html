@@ -13,9 +13,7 @@
           {{with $.Site.Params.home.image }}
           <ion-img src="{{ . }}" alt="Home Banner"></ion-img>
           {{ end }}
-          <ion-card-content>
           {{ partial "site-social-card-buttons" . }}
-          </ion-card-content>
         </ion-card>
       {{ end }}
       </ion-row>
