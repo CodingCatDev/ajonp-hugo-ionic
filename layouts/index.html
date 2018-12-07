@@ -23,6 +23,11 @@
         {{partial "card-link" . }}
         {{ end }}
       </ion-row>
+      <ion-row>
+        <ion-col>
+          {{ .Content }}
+        </ion-col>
+      </ion-row>
     </ion-grid>
   </ion-content>
   {{ partial "footer" .}}
