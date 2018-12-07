@@ -5,7 +5,6 @@
 
   <ion-content>
     <ion-list>
-      <ion-list-header> Navigate </ion-list-header>
       <ion-menu-toggle auto-hide="false">
         {{ $currentPage := . }} {{ range.Site.Menus.main }}
         <ion-item button href="{{ .URL }}">
@@ -14,37 +13,29 @@
         </ion-item>
         {{ end }}
       </ion-menu-toggle>
-    </ion-list>
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>{{.Title}}</ion-card-title>
-      </ion-card-header>
-      <ion-card-content> {{ partial "toc" .}} </ion-card-content>
-    </ion-card>
-  </ion-content>
-  <ion-footer>
-    <ion-grid>
       <ion-row justify-content-center>
         <ion-col>
-          {{/*  {{ if .IsHome }}  */}}
+          {{/*  {{ if not .IsHome }}  */}}
           {{ with $.Site.Params.home }}
-            {{ if or (isset . "showgithub") (isset . "showtwitter") (isset . "showyoutube") }}
+            {{ if or (isset . "showgithub") (isset . "showtwitter") (isset . "showyoutube") (isset . "showslack") }}
                     {{ if and (isset . "showgithub") (isset $.Site.Params "github") }}
-                        <ion-button class="ajonp-github" expand="block" href="https://github.com/{{ $.Site.Params.github }}">
-                            <i class="fab fa-github" data-fa-transform="left-6"></i>
-                            GitHub
+                        <ion-button class="ajonp-github" href="https://github.com/{{ $.Site.Params.github }}">
+                            <i class="fab fa-github fa-lg"></i>
                         </ion-button>
                     {{ end }}
                     {{ if and (isset . "showtwitter") (isset $.Site.Params "twitter") }}
-                        <ion-button class="ajonp-twitter" expand="block" href="https://twitter.com/{{ $.Site.Params.twitter }}">
-                            <i class="fab fa-twitter" data-fa-transform="left-6"></i>
-                            Twitter
+                        <ion-button class="ajonp-twitter" href="https://twitter.com/{{ $.Site.Params.twitter }}">
+                            <i class="fab fa-twitter fa-lg"></i>
+                        </ion-button>
+                    {{ end }}
+                    {{ if and (isset . "showslack") (isset $.Site.Params "slack") }}
+                        <ion-button class="ajonp-slack" href="https://{{ $.Site.Params.slack }}.slack.com">
+                            <i class="fab fa-slack fa-lg"></i>
                         </ion-button>
                     {{ end }}
                     {{ if and (isset . "showyoutube") (isset $.Site.Params "youtube") }}
-                        <ion-button class="ajonp-youtube" expand="block" href="https://www.youtube.com/channel/{{ $.Site.Params.youtube | absURL }}">
-                            <i class="fab fa-youtube" data-fa-transform="left-6"></i>
-                            YouTube
+                        <ion-button class="ajonp-youtube" href="https://www.youtube.com/channel/{{ $.Site.Params.youtube | absURL }}">
+                            <i class="fab fa-youtube fa-lg"></i>
                         </ion-button>
                     {{ end }}
                 </ion-row>
@@ -53,6 +44,12 @@
       {{/*  {{ end }}  */}}
         </ion-col>
       </ion-row>
-    </ion-grid>
-</ion-footer>
+    </ion-list>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>{{.Title}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content> {{ partial "toc" .}} </ion-card-content>
+    </ion-card>
+  </ion-content>
 </ion-menu>
