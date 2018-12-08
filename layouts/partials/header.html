@@ -14,7 +14,6 @@
         {{ end }}
       </ion-menu-toggle>
       <ion-row justify-content-center>
-        <ion-col>
           {{/*  {{ if not .IsHome }}  */}}
           {{ with $.Site.Params.home }}
             {{ if or (isset . "showgithub") (isset . "showtwitter") (isset . "showyoutube") (isset . "showslack") }}
@@ -38,11 +37,9 @@
                             <i class="fab fa-youtube fa-lg"></i>
                         </ion-button>
                     {{ end }}
-                </ion-row>
             {{ end }}
         {{ end }}
       {{/*  {{ end }}  */}}
-        </ion-col>
       </ion-row>
     </ion-list>
     <ion-card>
