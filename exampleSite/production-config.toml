@@ -1,6 +1,7 @@
 baseurl = "https://ajonp.com"
 
-googleAnalytics = "UA-36984825-1"
+googleAnalytics = "UA-<your_number>"
+adsense = "ca-pub-<your_number>"
 
 [outputFormats.Algolia]
 baseName = "algolia"
