@@ -5,7 +5,7 @@ description = "Purr-fect Solutions"
 metadataformat = "yaml"
 canonifyurls = true
 disqusShortname = "<your_name>"
-enableGitInfo = "true"
+# enableGitInfo = "true" # you can change this after git init
 pygmentsUseClasses = "true"
 pygmentsCodeFences = "true"
 
