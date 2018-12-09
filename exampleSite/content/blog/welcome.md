@@ -6,7 +6,7 @@ categories = ["youtube"]
 draft = false
 description = "Rebranding AJonP"
 weight = 10
-images = ["https://res.cloudinary.com/ajonp/image/upload/f_auto/v1543267002/ajonp-ajonp-com/youtube_banner.png"]
+images = ["https://res.cloudinary.com/ajonp/image/upload/f_auto,fl_lossy,q_auto/v1543267002/ajonp-ajonp-com/youtube_banner.png"]
 +++
 
 # AJonP - Purr-fect Solutions
@@ -23,11 +23,11 @@ That is when it struck me, all the complaints about setting up [SEO](https://sup
 ## The Mascot
 So I jumped in (probably head first and too fast), I decided I wanted something to represent coding. I always meant for AJONP to mean Alex Jon on Programming. But I started sketching things out on my idea notepad, and had a basset hound wearing an Angular logo collar. I showed it to my wife, she said, why don't you make it a cat, since we have a cat. 
 
-{{< figure src="https://res.cloudinary.com/ajonp/image/upload/f_auto/t_500/v1543356396/ajonp-ajonp-com/welcome/MVIMG_20171027_130550.jpg" title="Xena" alt="Xena">}}
+{{< figure src="https://res.cloudinary.com/ajonp/image/upload/f_auto,fl_lossy,q_auto/t_500/v1543356396/ajonp-ajonp-com/welcome/MVIMG_20171027_130550.jpg" title="Xena" alt="Xena">}}
 
 So I shifted left and started trying to learn some basic Photoshop skills to make the Cat named AJ. I learned very quickly that I should apprectiate designers more because my logo is pretty rough, but it works for now 😀.
 
-{{< figure src="http://res.cloudinary.com/ajonp/image/upload/f_auto/v1543499918/ajonp-ajonp-com/welcome/ajonp-ajonp-com-logo-round.png" title="AJ" alt="AJ" >}}
+{{< figure src="http://res.cloudinary.com/ajonp/image/upload/f_auto,fl_lossy,q_auto/v1543499918/ajonp-ajonp-com/welcome/ajonp-ajonp-com-logo-round.png" title="AJ" alt="AJ" >}}
 
 ## The Youtube Logo Sting
 

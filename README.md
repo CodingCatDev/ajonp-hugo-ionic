@@ -1,5 +1,5 @@
 # AJonP - Hugo Ionic Theme
-[![AJonP Hugo Ionic Theme](https://res.cloudinary.com/ajonp/image/upload/f_auto/v1543792067/ajonp-ajonp-com/ajonp-hugo-theme/aj_on_hugo_ionic.png)](https://ajonp.com/lessons/4-hugo-ionic/)
+[![AJonP Hugo Ionic Theme](https://res.cloudinary.com/ajonp/image/upload/f_auto,fl_lossy,q_auto/v1543792067/ajonp-ajonp-com/ajonp-hugo-theme/aj_on_hugo_ionic.png)](https://ajonp.com/lessons/4-hugo-ionic/)
 
 # Features
 

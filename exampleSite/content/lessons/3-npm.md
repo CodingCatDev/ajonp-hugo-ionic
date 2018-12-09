@@ -11,7 +11,7 @@ toc = true
 tags = ["npm"]
 categories = ["tools"]
 languages = [""]
-images = ["https://res.cloudinary.com/ajonp/image/upload/f_auto/v1543792850/ajonp-ajonp-com/3-lesson-npm/aj_on_npm.png"]
+images = ["https://res.cloudinary.com/ajonp/image/upload/f_auto,fl_lossy,q_auto/v1543792850/ajonp-ajonp-com/3-lesson-npm/aj_on_npm.png"]
 +++
 
 ## Google Cloud Source Repositories
