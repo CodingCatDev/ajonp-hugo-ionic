@@ -6,8 +6,10 @@
     <ion-card-content>
       <p>{{ .Params.description }}</p>
     </ion-card-content>
-    {{ if isset .Params "images" }} {{ range (.Params.images) first 1 . }}
-    <ion-img src="{{ . | absURL }}" alt="Hero Image"></ion-img>
-    {{ end }} {{ end }}
+    {{ if isset .Params "images" }} 
+      {{ range first 1 .Params.images }}
+        <ion-img src="{{ . | absURL }}" alt="Hero Image"></ion-img>
+      {{ end }} 
+    {{ end }}
   </ion-card>
 </a>
