@@ -48,11 +48,17 @@
         <ion-col> {{ partial "scripts/headline-link.html" .Content | safeHTML }} </ion-col>
       </ion-row>
       <ion-row>
+        {{ range first 1 (where (where .Site.Pages ".Params.tags" "intersect" .Params.tags) "Permalink" "!=" .Permalink) }}
+          {{ $.Scratch.Set "has_related" true }}
+        {{ end }}
+        
+        {{ if $.Scratch.Get "has_related" }}
         <ion-card color="light">
           <ion-card-content>
             {{ partial "post/related-content" . }}
           </ion-card-content>
         </ion-card>
+        {{end}}
         <ion-card color="light">
           <ion-card-content> {{ partial "post/byauthor" . }} </ion-card-content>
         </ion-card>
