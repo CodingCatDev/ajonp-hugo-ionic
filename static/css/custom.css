@@ -185,3 +185,53 @@ blockquote a {
 img{
   box-shadow: 0 3px 1px -2px rgba(0,0,0,0.2), 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12);
 }
+
+.blockquote-warning{
+  position: relative;
+  z-index: 1;
+}
+.blockquote-warning blockquote {
+  border-left-color: var(--ion-color-warning);
+  background-color: var(--ion-color-warning-tint);
+  color: var(--ion-color-warning-contrast);
+  border-left-style: solid;
+  border-left-width: 4px;
+  margin: 0.1em auto;
+  padding: 0.5em;
+  border-radius: 0.2em;
+}
+.blockquote-warning blockquote a {
+  color: var(--ion-color-warning-contrast);
+}
+.blockquote-warning p {
+  margin: 0px;
+  padding: 1em;
+  color: var(--ion-color-warning-contrast);
+}
+.icon::before {
+  display: none;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+.warning::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f007";
+}
+.warning{
+  position: absolute;
+  top: 14px;
+  left: -12px;
+  color: var(--ion-color-warning-contrast);
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  text-align: center;
+  line-height: 20px;
+  font-weight: 700;
+  font-family: Palanquin,sans-serif;
+  font-size: 14px;
+  background-color: var(--ion-color-warning-shade);
+}
