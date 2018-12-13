@@ -1,0 +1,9 @@
+{{ define "header"}} {{ partial "header" .}} {{ end }} {{ define "main"}}
+<ion-page class="ion-page" main>
+    {{ partial "page-header" . }}
+  <ion-content padding>
+    {{ .Content }}
+    {{ partial "footer_home" .}}
+  </ion-content>
+</ion-page>
+{{ end }}
