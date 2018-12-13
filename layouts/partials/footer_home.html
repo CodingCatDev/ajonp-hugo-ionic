@@ -1,0 +1,11 @@
+<ion-toolbar color="light">
+  ©2018 AJONP LLC
+  <ion-buttons slot="end">
+    {{ with .Site.GetPage "/terms" }}
+    <ion-button href="/terms">Terms</ion-button>
+    {{ end }}
+    {{ with .Site.GetPage "/privacy" }}
+    <ion-button href="/privacy">Privacy</ion-button>
+    {{ end }}
+  </ion-buttons>
+</ion-toolbar>
