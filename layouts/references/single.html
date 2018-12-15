@@ -1,0 +1,12 @@
+{{ define "header"}} {{ partial "header" .}} {{ end }} {{ define "main"}}
+<ion-page class="ion-page" main>
+    {{ partial "page-header" . }}
+  <ion-content padding>
+    <blockquote>
+      Original README.md from <a href='https://github.com/{{ replace .File.TranslationBaseName "~" "/" }}'>https://github.com/{{ replace .File.TranslationBaseName "~" "/" }}</a>
+    </blockquote>
+    {{ .Content | safeHTML }}
+  </ion-content>
+  {{ partial "footer" .}}
+</ion-page>
+{{ end }}

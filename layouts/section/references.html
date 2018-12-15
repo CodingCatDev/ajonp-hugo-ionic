@@ -1,0 +1,18 @@
+{{ define "header"}} {{ partial "header" .}} {{ end }} {{ define "main"}}
+<ion-page class="ion-page" main>
+    {{ partial "page-header" . }}
+  <ion-content padding>
+    <ion-list>
+        <ion-list-header>{{.File.TranslationBaseName}}</ion-list-header>
+        <ion-menu-toggle auto-hide="false">
+            {{ range.Data.Pages.ByWeight }}
+          <ion-item button href="{{ .Permalink }}">
+            <ion-label> {{ replace .File.TranslationBaseName "~" "/" }} </ion-label>
+          </ion-item>
+          {{ end }}
+        </ion-menu-toggle>
+      </ion-list>
+  </ion-content>
+  {{ partial "footer" .}}
+</ion-page>
+{{ end }}
