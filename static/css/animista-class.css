@@ -1,0 +1,10 @@
+/* Animista classes */
+.jello-horizontal {
+	-webkit-animation: jello-horizontal 0.9s infinite linear both;
+	        animation: jello-horizontal 0.9s infinite linear both;
+}
+
+.heartbeat {
+	-webkit-animation: heartbeat 1.5s ease-in-out infinite both;
+	        animation: heartbeat 1.5s ease-in-out infinite both;
+}
