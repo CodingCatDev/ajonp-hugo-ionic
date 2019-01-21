@@ -69,9 +69,12 @@ if ('serviceWorker' in navigator) {
       message: 'New Update',
       showCloseButton: true,
       position: 'bottom',
-      closeButtonText: 'Refresh'
+      closeButtonText: 'Refresh',
+      color: 'primary'
     });
-    toast.on('ionToastDidDismiss', () => { window.location('/')});
+    toast.addEventListener("ionToastDidDismiss", () => {
+      location.reload();
+    });
     return await toast.present();
   }
 }
