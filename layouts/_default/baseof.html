@@ -51,6 +51,7 @@
   </head>
 
   <body>
+    {{ partial "gtm" . }}
     <ion-app>
       <ion-split-pane when="md">
         {{ block "header" . }}{{ end }} {{ block "main" . }}{{ end }}
