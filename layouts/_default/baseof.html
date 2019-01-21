@@ -56,9 +56,9 @@
         {{ block "header" . }}{{ end }} {{ block "main" . }}{{ end }}
         {{ block "footer" . }}{{ end }}
       </ion-split-pane>
+      <ion-menu-controller></ion-menu-controller>
+      <ion-toast-controller></ion-toast-controller>
     </ion-app>
-    <ion-menu-controller></ion-menu-controller>
     {{ partial "footer_js" . }}
-    <ion-toast-controller></ion-toast-controller>
   </body>
 </html>
