@@ -111,11 +111,11 @@
         closeButtonText: 'OK',
         color: 'warning'
       });
+      toast.addEventListener("ionToastDidDismiss", async () => {
+        localStorage.setItem('ajonp-cookie-okay', true);
+      });
       return await toast.present();
     }
-    });
-    window.addEventListener("ionToastDidDismiss", async () => {
-      localStorage.setItem('ajonp-cookie-okay', true);
     });
   </script>
   {{end}}
