@@ -6,6 +6,7 @@
 {{/*  Algolia widgets  */}}
 {{ with .Site.Params.algolia }}
 <script>
+  //  Instant Search
     window.addEventListener("load", function() {
       const search = instantsearch({
         appId: "{{ .appid }}",
@@ -94,6 +95,27 @@
         })
       );
       search.start();
+    });
+
+    // Cookies
+    window.addEventListener("load", async () => {
+      if(!localStorage.getItem('ajonp-cookie-okay')){
+      const toastController = document.querySelector('ion-toast-controller');
+      await toastController.componentOnReady();
+
+      const toast = await toastController.create({
+        message: 'This website uses cookies to ensure you get the best experience on our website.',
+        animated: true,
+        showCloseButton: true,
+        position: 'bottom',
+        closeButtonText: 'OK',
+        color: 'warning'
+      });
+      return await toast.present();
+    }
+    });
+    window.addEventListener("ionToastDidDismiss", async () => {
+      localStorage.setItem('ajonp-cookie-okay', true);
     });
   </script>
   {{end}}
