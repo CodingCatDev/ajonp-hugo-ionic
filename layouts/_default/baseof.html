@@ -43,11 +43,11 @@
 
     {{ partial "head" . }}
     {{ with .Site.Params.animista }}
-    <link href="{{ "/css/animista.css" | absURL }}" rel="stylesheet" as="style" type="text/css" defer> 
-    <link href="{{ "/css/animista-class.css" | absURL }}" rel="stylesheet" as="style" type="text/css" defer> 
+    <link href="{{ "/css/animista.css" | absURL }}" rel="stylesheet" as="style" type="text/css" async> 
+    <link href="{{ "/css/animista-class.css" | absURL }}" rel="stylesheet" as="style" type="text/css" async> 
     {{ end }}
-    <link href="{{ "/css/custom.css" | absURL }}" rel="stylesheet" as="style" type="text/css" defer> 
-    <link href="{{ "/css/syntax.css" | absURL }}" rel="stylesheet" as="style" type="text/css" defer>
+    <link href="{{ "/css/custom.css" | absURL }}" rel="stylesheet" as="style" type="text/css" async> 
+    <link href="{{ "/css/syntax.css" | absURL }}" rel="stylesheet" as="style" type="text/css" async>
   </head>
 
   <body>
