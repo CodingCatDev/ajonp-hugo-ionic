@@ -103,15 +103,20 @@
   color: white;
 }
 
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .error-container h1 {
     font-size: 220px;
   }
-}
-
-@media (max-width: 768px) {
   .copyright {
     font-size: .7em;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .return {
+    position: absolute;
+    width: 100%;
+    bottom: 30px;
   }
 }
 
@@ -120,14 +125,6 @@
   font-weight: 400;
   letter-spacing: -0.04em;
   margin: 0;
-}
-
-@media (min-width: 480px) {
-  .return {
-    position: absolute;
-    width: 100%;
-    bottom: 30px;
-  }
 }
 
 .return a {

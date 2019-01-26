@@ -2,11 +2,11 @@
 {{ $url := printf "%s" .Permalink | absLangURL }}
 {{ $body := print $title ", by " .Site.Title "\n" .Params.description "\n\n" $url "\n" }}
 
-<ion-button href="http://www.facebook.com/sharer.php?u={{ $url }}" class="ajonp-facebook" aria-label="share on Facebook">
+<ion-button href="http://www.facebook.com/sharer.php?u={{ $url }}" aria-label="share on Facebook">
 <i class="fab fa-facebook" data-fa-transform="left-6"></i>Facebook
 </ion-button>
 
-<ion-button href="http://twitter.com/share?url={{ $url }}&text={{ $title }}&via={{with .Site.Params.twitter }}{{ . }}{{ end }}" class="ajonp-twitter" aria-label="share on Twitter">
+<ion-button href="http://twitter.com/share?url={{ $url }}&text={{ $title }}&via={{with .Site.Params.twitter }}{{ . }}{{ end }}" aria-label="share on Twitter">
 <i class="fab fa-twitter" data-fa-transform="left-6"></i>Twitter
 </ion-button>
 
