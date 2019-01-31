@@ -66,6 +66,7 @@
   --ajonp-color-github: #23292D;
   --ajonp-color-youtube: #FF0000;
   --ajonp-color-slack: #008001;
+  --ajonp-color-gitter: #DF3362;
 }
 
 .ajonp-twitter{
@@ -82,6 +83,10 @@
 }
 .ajonp-slack{
   --background: var(--ajonp-color-slack);
+  --color: white;
+}
+.ajonp-gitter{
+  --background: var(--ajonp-color-gitter);
   --color: white;
 }
 

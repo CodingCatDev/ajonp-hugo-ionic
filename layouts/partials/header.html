@@ -32,6 +32,11 @@
                             <i class="fab fa-slack fa-lg"></i>
                         </ion-button>
                     {{ end }}
+                    {{ if and (isset . "showgitter") (isset $.Site.Params "gitter") }}
+                      <ion-button class="ajonp-gitter">
+                          <i class="fab fa-gitter fa-lg"></i>
+                      </ion-button>
+                    {{ end }}
                     {{ if and (isset . "showyoutube") (isset $.Site.Params "youtube") }}
                         <ion-button class="ajonp-youtube" href="https://www.youtube.com/channel/{{ $.Site.Params.youtube | absURL }}">
                             <i class="fab fa-youtube fa-lg"></i>

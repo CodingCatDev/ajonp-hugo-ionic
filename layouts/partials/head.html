@@ -300,3 +300,14 @@
 }( typeof global !== "undefined" ? global : this ) );
 
 </script>
+
+{{/* Gitter */}}
+{{ with .Site.Params.gitter }}
+<script>
+  ((window.gitter = {}).chat = {}).options = {
+    room: '{{ . }}',
+    activationElement: '.ajonp-gitter',
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async></script>
+{{ end }}

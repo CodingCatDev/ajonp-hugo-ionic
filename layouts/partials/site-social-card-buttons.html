@@ -27,6 +27,13 @@
                     </ion-button>
                 </ion-col>
             {{ end }}
+            {{ if and (isset . "showgitter") (isset $.Site.Params "gitter") }}
+            <ion-col size="6" size-sm>
+                <ion-button class="ajonp-gitter" expand="block">
+                    <i class="fab fa-gitter"></i>Gitter
+                </ion-button>
+            </ion-col>
+          {{ end }}
             {{ if and (isset . "showyoutube") (isset $.Site.Params "youtube") }}
             <ion-col size="6" size-sm>
                 <ion-button class="ajonp-youtube" expand="block" href="https://www.youtube.com/channel/{{ $.Site.Params.youtube | absURL }}">
