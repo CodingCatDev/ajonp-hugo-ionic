@@ -4,8 +4,23 @@
   <ion-content padding>
     <ion-grid>
       <ion-row justify-content-center>
-        {{ range.Data.Pages.ByDate.Reverse }}
+        {{ range (.Paginator 6).Pages.ByDate.Reverse }}
           {{partial "card-link" . }}
+        {{ end }}
+      </ion-row>
+      <ion-row justify-content-center>
+        {{ if gt .Paginator.TotalPages 2 }}
+        <ion-button color="secondary" href="{{ .Paginator.First.URL}}"><<</ion-button>
+        {{ end }}
+        {{ if .Paginator.HasPrev}}
+        <ion-button href="{{ .Paginator.Prev.URL}}"><</ion-button>
+        {{ end }}
+        <ion-chip>{{ .Paginator.PageNumber }} of {{ .Paginator.TotalPages }}</ion-chip>
+        {{ if .Paginator.HasNext}}
+        <ion-button href="{{ .Paginator.Next.URL}}">></ion-button>
+        {{ end }}
+        {{ if gt .Paginator.TotalPages 2 }}
+        <ion-button color="secondary" href="{{ .Paginator.Last.URL}}">>></ion-button>
         {{ end }}
       </ion-row>
     </ion-grid>
