@@ -7,9 +7,8 @@
     <ion-list>
       <ion-menu-toggle auto-hide="false">
         {{ $currentPage := . }} {{ range.Site.Menus.main }}
-        <ion-item button href="{{ .URL }}">
-          <ion-icon slot="start" name="{{ .Pre }}" color="primary"></ion-icon>
-          <ion-label> {{ .Name }} </ion-label>
+        <ion-item button href="{{ .URL }}" style="font-size: 20px;font-weight: 900;"> 
+          {{ .Pre }}
         </ion-item>
         {{ end }}
       </ion-menu-toggle>
