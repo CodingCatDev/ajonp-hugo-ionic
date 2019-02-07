@@ -120,3 +120,214 @@
     });
   </script>
   {{end}}
+  <!-- <script>
+  async function presentPalettePopover(ev) {
+    const popoverController = document.querySelector('ion-popover-controller')
+    await popoverController.componentOnReady()
+    console.log(ev)
+    const popover = await popoverController.create({
+      component: 'ajonp-palette',
+      translucent: false,
+      event: ev,
+    })
+    return await popover.present()
+  }
+</script> -->
+<script>
+  // Listen for ionChange on all segments
+  const segments = document.querySelectorAll('ion-segment');
+  for (let i = 0; i < segments.length; i++) {
+    segments[i].addEventListener('ionChange', (ev) => {
+      let evTheme = ev.srcElement.value;
+      localStorage.setItem('ajonp-theme', evTheme);
+      setTheme(evTheme);
+    });
+    segments[i].addEventListener('ionStyle', (ev) => {
+      ev.target.value = currentTheme;
+    });
+  }
+  
+  const themes = [
+    {
+      name: 'primary',
+      styles: [
+        { themeVariable: '--ion-background-color', value: ' #ffffff'},
+        { themeVariable: '--ion-background-color-rgb', value: ' 255,255,255'},
+        { themeVariable: '--ion-text-color', value: ' #000000'},
+        { themeVariable: '--ion-text-color-rgb', value: ' 0,0,0'},
+        { themeVariable: '--ion-color-step-50', value: ' #f2f2f2'},
+        { themeVariable: '--ion-color-step-100', value: ' #e6e6e6'},
+        { themeVariable: '--ion-color-step-150', value: ' #d9d9d9'},
+        { themeVariable: '--ion-color-step-200', value: ' #cccccc'},
+        { themeVariable: '--ion-color-step-250', value: ' #bfbfbf'},
+        { themeVariable: '--ion-color-step-300', value: ' #b3b3b3'},
+        { themeVariable: '--ion-color-step-350', value: ' #a6a6a6'},
+        { themeVariable: '--ion-color-step-400', value: ' #999999'},
+        { themeVariable: '--ion-color-step-450', value: ' #8c8c8c'},
+        { themeVariable: '--ion-color-step-500', value: ' #808080'},
+        { themeVariable: '--ion-color-step-550', value: ' #737373'},
+        { themeVariable: '--ion-color-step-600', value: ' #666666'},
+        { themeVariable: '--ion-color-step-650', value: ' #595959'},
+        { themeVariable: '--ion-color-step-700', value: ' #4d4d4d'},
+        { themeVariable: '--ion-color-step-750', value: ' #404040'},
+        { themeVariable: '--ion-color-step-800', value: ' #333333'},
+        { themeVariable: '--ion-color-step-850', value: ' #262626'},
+        { themeVariable: '--ion-color-step-900', value: ' #191919'},
+        { themeVariable: '--ion-color-step-950', value: ' #0d0d0d'},
+        { themeVariable: '--ion-color-primary', value: ' #3C2D4E'},
+        { themeVariable: '--ion-color-primary-rgb', value: ' 60,45,78'},
+        { themeVariable: '--ion-color-primary-contrast', value: ' #ffffff'},
+        { themeVariable: '--ion-color-primary-contrast-rgb', value: '255255255'},
+        { themeVariable: '--ion-color-primary-shade', value: ' #352845'},
+        { themeVariable: '--ion-color-primary-tint', value: ' #504260'},
+        { themeVariable: '--ion-color-secondary', value: ' #FC8991'},
+        { themeVariable: '--ion-color-secondary-rgb', value: '252137145'},
+        { themeVariable: '--ion-color-secondary-contrast', value: ' #000000'},
+        { themeVariable: '--ion-color-secondary-contrast-rgb', value: ' 0,0,0'},
+        { themeVariable: '--ion-color-secondary-shade', value: ' #de7980'},
+        { themeVariable: '--ion-color-secondary-tint', value: ' #fc959c'},
+        { themeVariable: '--ion-color-tertiary', value: ' #3F51B4'},
+        { themeVariable: '--ion-color-tertiary-rgb', value: ' 63,81,180'},
+        { themeVariable: '--ion-color-tertiary-contrast', value: ' #ffffff'},
+        { themeVariable: '--ion-color-tertiary-contrast-rgb', value: '255255255'},
+        { themeVariable: '--ion-color-tertiary-shade', value: ' #37479e'},
+        { themeVariable: '--ion-color-tertiary-tint', value: ' #5262bc'},
+        { themeVariable: '--ion-color-success', value: ' #039588'},
+        { themeVariable: '--ion-color-success-rgb', value: '3149136'},
+        { themeVariable: '--ion-color-success-contrast', value: ' #ffffff'},
+        { themeVariable: '--ion-color-success-contrast-rgb', value: '255255255'},
+        { themeVariable: '--ion-color-success-shade', value: ' #038378'},
+        { themeVariable: '--ion-color-success-tint', value: ' #1ca094'},
+        { themeVariable: '--ion-color-warning', value: ' #FE9800'},
+        { themeVariable: '--ion-color-warning-rgb', value: ' 254,152,0'},
+        { themeVariable: '--ion-color-warning-contrast', value: ' #000000'},
+        { themeVariable: '--ion-color-warning-contrast-rgb', value: ' 0,0,0'},
+        { themeVariable: '--ion-color-warning-shade', value: ' #e08600'},
+        { themeVariable: '--ion-color-warning-tint', value: ' #fea21a'},
+        { themeVariable: '--ion-color-danger', value: ' #F34336'},
+        { themeVariable: '--ion-color-danger-rgb', value: ' 243,67,54'},
+        { themeVariable: '--ion-color-danger-contrast', value: ' #ffffff'},
+        { themeVariable: '--ion-color-danger-contrast-rgb', value: '255255255'},
+        { themeVariable: '--ion-color-danger-shade', value: ' #d63b30'},
+        { themeVariable: '--ion-color-danger-tint', value: ' #f4564a'},
+        { themeVariable: '--ion-color-dark', value: ' #000000'},
+        { themeVariable: '--ion-color-dark-rgb', value: '255255255'},
+        { themeVariable: '--ion-color-dark-contrast', value: ' #000000'},
+        { themeVariable: '--ion-color-dark-contrast-rgb', value: ' 0,0,0'},
+        { themeVariable: '--ion-color-dark-shade', value: ' #e0e0e0'},
+        { themeVariable: '--ion-color-dark-tint', value: ' #ffffff'},
+        { themeVariable: '--ion-color-medium', value: ' #808080'},
+        { themeVariable: '--ion-color-medium-rgb', value: '128128128'},
+        { themeVariable: '--ion-color-medium-contrast', value: ' #000000'},
+        { themeVariable: '--ion-color-medium-contrast-rgb', value: ' 0,0,0'},
+        { themeVariable: '--ion-color-medium-shade', value: ' #717171'},
+        { themeVariable: '--ion-color-medium-tint', value: ' #8d8d8d'},
+        { themeVariable: '--ion-color-light', value: ' #ffffff'},
+        { themeVariable: '--ion-color-light-rgb', value: ' 0,0,0'},
+        { themeVariable: '--ion-color-light-contrast', value: ' #ffffff'},
+        { themeVariable: '--ion-color-light-contrast-rgb', value: '255255255'},
+        { themeVariable: '--ion-color-light-shade', value: ' #000000'},
+        { themeVariable: '--ion-color-light-tint', value: ' #1a1a1a'},
+        { themeVariable: '--ajonp-color-twitter', value: ' #1DA1F1'},
+        { themeVariable: '--ajonp-color-github', value: ' #23292D'},
+        { themeVariable: '--ajonp-color-youtube', value: ' #FF0000'},
+        { themeVariable: '--ajonp-color-slack', value: ' #008001'},
+      ]
+    },
+    {
+      name: 'dark',
+      styles: [
+        { themeVariable: '--ion-background-color', value: ' #000000'},
+        { themeVariable: '--ion-background-color-rgb', value: ' 0,0,0'},
+        { themeVariable: '--ion-text-color', value: ' #ffffff'},
+        { themeVariable: '--ion-text-color-rgb', value: '255255255'},
+        { themeVariable: '--ion-color-step-50', value: ' #0d0d0d'},
+        { themeVariable: '--ion-color-step-100', value: ' #1a1a1a'},
+        { themeVariable: '--ion-color-step-150', value: ' #262626'},
+        { themeVariable: '--ion-color-step-200', value: ' #333333'},
+        { themeVariable: '--ion-color-step-250', value: ' #404040'},
+        { themeVariable: '--ion-color-step-300', value: ' #4d4d4d'},
+        { themeVariable: '--ion-color-step-350', value: ' #595959'},
+        { themeVariable: '--ion-color-step-400', value: ' #666666'},
+        { themeVariable: '--ion-color-step-450', value: ' #737373'},
+        { themeVariable: '--ion-color-step-500', value: ' #808080'},
+        { themeVariable: '--ion-color-step-550', value: ' #8c8c8c'},
+        { themeVariable: '--ion-color-step-600', value: ' #999999'},
+        { themeVariable: '--ion-color-step-650', value: ' #a6a6a6'},
+        { themeVariable: '--ion-color-step-700', value: ' #b3b3b3'},
+        { themeVariable: '--ion-color-step-750', value: ' #bfbfbf'},
+        { themeVariable: '--ion-color-step-800', value: ' #cccccc'},
+        { themeVariable: '--ion-color-step-850', value: ' #d9d9d9'},
+        { themeVariable: '--ion-color-step-900', value: ' #e6e6e6'},
+        { themeVariable: '--ion-color-step-950', value: ' #f2f2f2'},
+        { themeVariable: '--ion-color-primary', value: ' #3C2D4E'},
+        { themeVariable: '--ion-color-primary-rgb', value: ' 60,45,78'},
+        { themeVariable: '--ion-color-primary-contrast', value: ' #ffffff'},
+        { themeVariable: '--ion-color-primary-contrast-rgb', value: '255255255'},
+        { themeVariable: '--ion-color-primary-shade', value: ' #352845'},
+        { themeVariable: '--ion-color-primary-tint', value: ' #504260'},
+        { themeVariable: '--ion-color-secondary', value: ' #0cd1e8'},
+        { themeVariable: '--ion-color-secondary-rgb', value: '12209232'},
+        { themeVariable: '--ion-color-secondary-contrast', value: ' #ffffff'},
+        { themeVariable: '--ion-color-secondary-contrast-rgb', value: '255255255'},
+        { themeVariable: '--ion-color-secondary-shade', value: ' #0bb8cc'},
+        { themeVariable: '--ion-color-secondary-tint', value: ' #24d6ea'},
+        { themeVariable: '--ion-color-tertiary', value: ' #7044ff'},
+        { themeVariable: '--ion-color-tertiary-rgb', value: ' 112,68,255'},
+        { themeVariable: '--ion-color-tertiary-contrast', value: ' #ffffff'},
+        { themeVariable: '--ion-color-tertiary-contrast-rgb', value: '255255255'},
+        { themeVariable: '--ion-color-tertiary-shade', value: ' #633ce0'},
+        { themeVariable: '--ion-color-tertiary-tint', value: ' #7e57ff'},
+        { themeVariable: '--ion-color-success', value: ' #10dc60'},
+        { themeVariable: '--ion-color-success-rgb', value: ' 16,220,96'},
+        { themeVariable: '--ion-color-success-contrast', value: ' #ffffff'},
+        { themeVariable: '--ion-color-success-contrast-rgb', value: '255255255'},
+        { themeVariable: '--ion-color-success-shade', value: ' #0ec254'},
+        { themeVariable: '--ion-color-success-tint', value: ' #28e070'},
+        { themeVariable: '--ion-color-warning', value: ' #ffce00'},
+        { themeVariable: '--ion-color-warning-rgb', value: ' 255,206,0'},
+        { themeVariable: '--ion-color-warning-contrast', value: ' #ffffff'},
+        { themeVariable: '--ion-color-warning-contrast-rgb', value: '255255255'},
+        { themeVariable: '--ion-color-warning-shade', value: ' #e0b500'},
+        { themeVariable: '--ion-color-warning-tint', value: ' #ffd31a'},
+        { themeVariable: '--ion-color-danger', value: ' #f04141'},
+        { themeVariable: '--ion-color-danger-rgb', value: ' 245,61,61'},
+        { themeVariable: '--ion-color-danger-contrast', value: ' #ffffff'},
+        { themeVariable: '--ion-color-danger-contrast-rgb', value: '255255255'},
+        { themeVariable: '--ion-color-danger-shade', value: ' #d33939'},
+        { themeVariable: '--ion-color-danger-tint', value: ' #f25454'},
+        { themeVariable: '--ion-color-dark', value: ' #ffffff'},
+        { themeVariable: '--ion-color-dark-rgb', value: '255255255'},
+        { themeVariable: '--ion-color-dark-contrast', value: ' #000000'},
+        { themeVariable: '--ion-color-dark-contrast-rgb', value: ' 0,0,0'},
+        { themeVariable: '--ion-color-dark-shade', value: ' #e0e0e0'},
+        { themeVariable: '--ion-color-dark-tint', value: ' #ffffff'},
+        { themeVariable: '--ion-color-medium', value: ' #989aa2'},
+        { themeVariable: '--ion-color-medium-rgb', value: '152154162'},
+        { themeVariable: '--ion-color-medium-contrast', value: ' #ffffff'},
+        { themeVariable: '--ion-color-medium-contrast-rgb', value: '255255255'},
+        { themeVariable: '--ion-color-medium-shade', value: ' #86888f'},
+        { themeVariable: '--ion-color-medium-tint', value: ' #a2a4ab'},
+        { themeVariable: '--ion-color-light', value: ' #000000'},
+        { themeVariable: '--ion-color-light-rgb', value: ' 0,0,0'},
+        { themeVariable: '--ion-color-light-contrast', value: ' #ffffff'},
+        { themeVariable: '--ion-color-light-contrast-rgb', value: '255255255'},
+        { themeVariable: '--ion-color-light-shade', value: ' #000000'},
+        { themeVariable: '--ion-color-light-tint', value: ' #1a1a1a'},
+      ]
+    },
+  ];
+
+    //Get current theme
+  let currentTheme = localStorage.getItem('ajonp-theme');
+  if(currentTheme){
+    setTheme(currentTheme);
+  }
+  
+  function setTheme(name) {
+  const theme = themes.find(theme => theme.name === name)
+    theme.styles.forEach(style => {
+      document.documentElement.style.setProperty(style.themeVariable, style.value)
+    })
+  }
+  </script>

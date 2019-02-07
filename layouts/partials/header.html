@@ -36,9 +36,21 @@
                             <i class="fab fa-youtube fa-lg"></i>
                         </ion-button>
                     {{ end }}
+                    {{ if isset . "showpalette" }}
+                    {{ end }}
             {{ end }}
         {{ end }}
       {{/*  {{ end }}  */}}
+      </ion-row>
+      <ion-row>
+        <ion-segment value="primary" color="dark" scrollable>
+          <ion-segment-button value="primary">
+            <ion-icon name="color-palette"></ion-icon>          
+          </ion-segment-button>
+          <ion-segment-button value="dark">
+            <ion-icon name="color-palette"></ion-icon>    
+          </ion-segment-button>
+        </ion-segment>
       </ion-row>
     </ion-list>
     <ion-card>
