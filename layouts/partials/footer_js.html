@@ -320,14 +320,14 @@
 
     //Get current theme
   let currentTheme = localStorage.getItem('ajonp-theme');
-  if(currentTheme){
-    setTheme(currentTheme);
-  }
   
   function setTheme(name) {
-  const theme = themes.find(theme => theme.name === name)
-    theme.styles.forEach(style => {
-      document.documentElement.style.setProperty(style.themeVariable, style.value)
-    })
-  }
+    if(name === "null"){
+      return;
+    }
+    const theme = themes.find(theme => theme.name === name)
+      theme.styles.forEach(style => {
+        document.documentElement.style.setProperty(style.themeVariable, style.value)
+      })
+    }
   </script>
